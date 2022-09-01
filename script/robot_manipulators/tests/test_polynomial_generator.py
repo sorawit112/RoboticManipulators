@@ -1,7 +1,7 @@
 import unittest
 
 import numpy as np
-from utils.polynomial_generator import PolynomialGenerator
+from robot_manipulators.utils.polynomial_generator import PolynomialGenerator
 
 
 class TestPolynomialGenerator(unittest.TestCase):

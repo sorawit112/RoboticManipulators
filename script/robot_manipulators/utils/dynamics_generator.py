@@ -5,12 +5,12 @@ import numpy as np
 import sympy as sp
 from tqdm import tqdm
 
-from utils.robo_math import SymbolicTransformation as st
-from utils.jacobians import JacobianCalculator
+from robot_manipulators.utils.robo_math import SymbolicTransformation as st
+from robot_manipulators.utils.jacobians import JacobianCalculator
 
-from utils.plot_utils import LatexRenderer
-from utils.plot_utils import TrajectoriesPlotter
-from utils.constants import G_ACC
+from robot_manipulators.utils.plot_utils import LatexRenderer
+from robot_manipulators.utils.plot_utils import TrajectoriesPlotter
+from robot_manipulators.utils.constants import G_ACC
 
 
 class DynamicsGenerator():

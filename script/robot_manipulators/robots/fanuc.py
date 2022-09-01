@@ -3,14 +3,15 @@ Fanuc165F class definition
 """
 import pickle
 from pathlib import Path
+import roslib
 
 import numpy as np
 import sympy as sp
 
-from robots.robot import Robot
-from utils.robo_math import SymbolicTransformation as st
-from utils.robo_math import Transformation
-from utils.plot_utils import TransformationPlotter
+from robot_manipulators.robots.robot import Robot
+from robot_manipulators.utils.robo_math import SymbolicTransformation as st
+from robot_manipulators.utils.robo_math import Transformation
+from robot_manipulators.utils.plot_utils import TransformationPlotter
 
 
 class Fanuc165F(Robot):
@@ -60,10 +61,11 @@ class Fanuc165F(Robot):
         self._calculate_limits_radians()
         self._save = save
         if self._save:
+            package_path = roslib.packages.get_pkg_dir('robot_manipulators') + '/script/robot_manipulators'
             self.fk_data_path = Path(
-                "robots/data/fanuc_forward_kinematics.pkl")
+                f"{package_path}/robots/data/fanuc_forward_kinematics.pkl")
             self.ik_data_path = Path(
-                "robots/data/fanuc_inverse_kinematics.pkl")
+                f"{package_path}/robots/data/fanuc_inverse_kinematics.pkl")
         self._precalculate_data()
 
         # self._tp = TransformationPlotter()

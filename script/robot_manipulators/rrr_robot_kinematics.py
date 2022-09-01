@@ -1,9 +1,10 @@
+#!/usr/bin/env python3
 """
 RRR Robot FK and IK usage example
 """
 import numpy as np
 
-from robots.rrr_robot import RRRRobot
+from robot_manipulators.robots.rrr_robot import RRRRobot
 
 
 def main():
@@ -25,7 +26,7 @@ def main():
 
     robot = RRRRobot(T_base=T_base, T_tool=T_tool)
 
-    qs = [np.pi / 2, 0, 0.2]
+    qs = [np.pi / 2, np.pi/4, 0]
 
     T = robot.forward_kinematics(qs, plot=False)
 

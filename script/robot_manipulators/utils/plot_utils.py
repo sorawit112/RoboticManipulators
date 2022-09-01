@@ -4,6 +4,7 @@ import numpy as np
 import sympy as sp
 import matplotlib.pyplot as plt
 from matplotlib import rc
+from mpl_toolkits.mplot3d import Axes3D
 
 
 class LatexRenderer():
@@ -159,12 +160,11 @@ class TransformationPlotter():
     def plot_numeric_frames(self, frames, axis_len=100, margin=1,
                             center=0, fixed_scale=False, show=True):
         joint_points = []
-
         self._plot_frame(np.eye(4),
                          joint_color='orange',
                          axis_len=axis_len)
-        joint_points.append(np.array([[0], [0], [0]]))
 
+        joint_points.append(np.array([[0], [0], [0]]))
         for frame in frames:
             joint_points.append(frame[:3, 3])
             self._plot_frame(np.array(frame),
@@ -191,12 +191,13 @@ class TransformationPlotter():
         self.ax.set_zlim(mid_z - max_range, mid_z + max_range)
 
         self._plot_links(joint_points)
+
         if show:
             self.show()
 
     def _plot_frame(self,
                     T,
-                    joint_color='magenta',
+                    joint_color='orange',
                     joint_size=40,
                     axis_len=100,
                     line_width=2):
@@ -223,9 +224,9 @@ class TransformationPlotter():
 
         origin = vectors[:, 0]
         self.ax.scatter(
-            origin[0],
-            origin[1],
-            origin[2],
+            float(origin[0]),
+            float(origin[1]),
+            float(origin[2]),
             c=joint_color,
             s=joint_size,
         )

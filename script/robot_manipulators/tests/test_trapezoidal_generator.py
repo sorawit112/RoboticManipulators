@@ -1,7 +1,7 @@
 import unittest
 
 import numpy as np
-from utils.trapezoidal_generator import TrapezoidalGenerator
+from robot_manipulators.utils.trapezoidal_generator import TrapezoidalGenerator
 
 
 class TestTrapezoidalGenerator(unittest.TestCase):

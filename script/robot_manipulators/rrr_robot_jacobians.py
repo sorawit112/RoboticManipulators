@@ -3,13 +3,14 @@ RRR Robot Jacobian calculation
 """
 import pickle
 from pathlib import Path
+import roslib
 
 import sympy as sp
 
-from utils.jacobians import JacobianCalculator
+from robot_manipulators.utils.jacobians import JacobianCalculator
 
-data_path = Path("data/rrr_jacobian.pkl")
-
+package_path = roslib.packages.get_pkg_dir('robot_manipulators') + '/script/robot_manipulators'
+data_path = Path(f"{package_path}/robots/data/rrr_jacobian.pkl")
 
 def get_symbolic_jacobian_inverse():
     if data_path.is_file():

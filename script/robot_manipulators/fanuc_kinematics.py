@@ -3,7 +3,7 @@ Fanuc FK and IK usage example
 """
 import numpy as np
 
-from robots.fanuc import Fanuc165F
+from robot_manipulators.robots.fanuc import Fanuc165F
 
 
 def main():

@@ -1,10 +1,10 @@
 import numpy as np
 from utils.dynamics_generator import DynamicsGenerator
-from robots.rr_robot import RRRobot
-from utils.desired_trajectory_generator import batman_trajectory
-from utils.desired_trajectory_generator import line_trajectory
-from utils.desired_trajectory_generator import ellipse_trajectory
-from utils.desired_trajectory_generator import func_from_array
+from robot_manipulators.robots.rr_robot import RRRobot
+from robot_manipulators.utils.desired_trajectory_generator import batman_trajectory
+from robot_manipulators.utils.desired_trajectory_generator import line_trajectory
+from robot_manipulators.utils.desired_trajectory_generator import ellipse_trajectory
+from robot_manipulators.utils.desired_trajectory_generator import func_from_array
 
 
 def get_ufunc(us, T):

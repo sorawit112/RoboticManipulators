@@ -3,9 +3,9 @@ RRR Robot trajectory planning examples
 """
 import numpy as np
 
-from utils.trajectory_generator import TrajectoryGenerator
-from robots.rrr_robot import RRRRobot
-from rrr_robot_jacobians import get_symbolic_jacobian_inverse
+from robot_manipulators.utils.trajectory_generator import TrajectoryGenerator
+from robot_manipulators.robots.rrr_robot import RRRRobot
+from robot_manipulators.rrr_robot_jacobians import get_symbolic_jacobian_inverse
 
 
 def main():

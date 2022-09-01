@@ -2,15 +2,16 @@
 RRRobot robot class definition
 """
 import pickle
+import roslib
 from pathlib import Path
 
 import numpy as np
 import sympy as sp
 import matplotlib.pyplot as plt
 
-from robots.robot import Robot
-from utils.robo_math import SymbolicTransformation as st
-from utils.plot_utils import TransformationPlotter
+from robot_manipulators.robots.robot import Robot
+from robot_manipulators.utils.robo_math import SymbolicTransformation as st
+from robot_manipulators.utils.plot_utils import TransformationPlotter
 
 
 class RRRobot(Robot):
@@ -53,7 +54,8 @@ class RRRobot(Robot):
 
         self._save = save
         if self._save:
-            self.fk_data_path = Path("robots/data/rr_forward_kinematics.pkl")
+            package_path = roslib.packages.get_pkg_dir('robot_manipulators') + '/script/robot_manipulators'
+            self.fk_data_path = Path(f"{package_path}/robots/data/rr_forward_kinematics.pkl")
         self._precalculate_data()
 
         self._tp = TransformationPlotter()

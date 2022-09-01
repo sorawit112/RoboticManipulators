@@ -1,9 +1,12 @@
 import scipy.io
+import roslib
 import numpy as np
 
 
 def main():
-    mat = scipy.io.loadmat('data/calibration_dataset.mat')
+    
+    package_path = roslib.packages.get_pkg_dir('robot_manipulators')
+    mat = scipy.io.loadmat(f"{package_path}/data/calibration_dataset.mat")
     pts1 = np.array(mat['mA'], dtype=np.float)[:, :, np.newaxis]
     pts2 = np.array(mat['mB'], dtype=np.float)[:, :, np.newaxis]
     pts3 = np.array(mat['mC'], dtype=np.float)[:, :, np.newaxis]

@@ -3,14 +3,15 @@ RRRRobot robot class definition
 """
 import pickle
 from pathlib import Path
+import roslib
 
 import numpy as np
 import sympy as sp
 import matplotlib.pyplot as plt
 
-from robots.robot import Robot
-from utils.robo_math import SymbolicTransformation as st
-from utils.plot_utils import TransformationPlotter
+from robot_manipulators.robots.robot import Robot
+from robot_manipulators.utils.robo_math import SymbolicTransformation as st
+from robot_manipulators.utils.plot_utils import TransformationPlotter
 
 
 class RRRRobot(Robot):
@@ -53,7 +54,8 @@ class RRRRobot(Robot):
         self._generate_value_pairs()
         self._calculate_limits_radians()
 
-        self.fk_data_path = Path("robots/data/rrr_forward_kinematics.pkl")
+        package_path = roslib.packages.get_pkg_dir('robot_manipulators') + '/script/robot_manipulators'
+        self.fk_data_path = Path(f"{package_path}/robots/data/rrr_forward_kinematics.pkl")
         self._precalculate_data()
 
         self._tp = TransformationPlotter()
@@ -129,9 +131,11 @@ class RRRRobot(Robot):
             if var[0] == 'q':
                 frames.append(self.T_base * frame)
 
-        frames.append(self.T_base * self._numeric_frames[-1])
-        frames.append(frames[-1] * self.T_tool)
 
+        frames.append(self.T_base * self._numeric_frames[-1])
+
+        frames.append(frames[-1] * self.T_tool)
+        
         self._tp.plot_numeric_frames(frames, axis_len=self.ls[0] / 4)
 
     def inverse_kinematics(self, T, m=1, k=1):

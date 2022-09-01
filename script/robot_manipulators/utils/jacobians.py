@@ -2,8 +2,8 @@
 JacobianCalculator class definition
 """
 import sympy as sp
-from utils.robo_math import SymbolicTransformation as st
-from utils.robo_math import Transformation as tf
+from robot_manipulators.utils.robo_math import SymbolicTransformation as st
+from robot_manipulators.utils.robo_math import Transformation as tf
 
 
 class JacobianCalculator():

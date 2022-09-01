@@ -3,9 +3,9 @@ Sample calibration of the RR manipulator with synthetic dataset
 """
 import numpy as np
 import sympy as sp
-from utils.model_calibration import ModelCalibrator
-from robots.rr_robot import RRRobot
-from utils.robo_math import Transformation as tf
+from robot_manipulators.utils.model_calibration import ModelCalibrator
+from robot_manipulators.robots.rr_robot import RRRobot
+from robot_manipulators.utils.robo_math import Transformation as tf
 
 
 def main():

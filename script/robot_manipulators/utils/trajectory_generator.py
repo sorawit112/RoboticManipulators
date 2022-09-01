@@ -4,9 +4,9 @@ TrajectoryGenerator class definition
 import numpy as np
 import sympy as sp
 
-from utils.polynomial_generator import PolynomialGenerator
-from utils.plot_utils import TrajectoriesPlotter
-from utils.trapezoidal_generator import TrapezoidalGenerator
+from robot_manipulators.utils.polynomial_generator import PolynomialGenerator
+from robot_manipulators.utils.plot_utils import TrajectoriesPlotter
+from robot_manipulators.utils.trapezoidal_generator import TrapezoidalGenerator
 
 
 class TrajectoryGenerator():

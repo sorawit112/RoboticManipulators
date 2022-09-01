@@ -7,9 +7,9 @@ import sympy as sp
 from tqdm import tqdm
 from scipy.optimize import least_squares
 
-from utils.robo_math import Transformation as tf
-from utils.robo_math import SymbolicTransformation as st
-from utils.jacobians import JacobianCalculator
+from robot_manipulators.utils.robo_math import Transformation as tf
+from robot_manipulators.utils.robo_math import SymbolicTransformation as st
+from robot_manipulators.utils.jacobians import JacobianCalculator
 
 
 class ModelCalibrator(object):

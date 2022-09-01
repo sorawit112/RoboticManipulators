@@ -2,7 +2,7 @@ import unittest
 
 import numpy as np
 
-from robots.fanuc import Fanuc165F
+from robot_manipulators.robots.fanuc import Fanuc165F
 
 
 class TestRobotsModule(unittest.TestCase):

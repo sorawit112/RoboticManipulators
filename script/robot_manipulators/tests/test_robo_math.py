@@ -1,8 +1,8 @@
 import unittest
 import numpy as np
 
-from utils.robo_math import Point3D
-from utils.robo_math import Transformation, SymbolicTransformation
+from robot_manipulators.utils.robo_math import Point3D
+from robot_manipulators.utils.robo_math import Transformation, SymbolicTransformation
 
 
 class TestRoboMathModule(unittest.TestCase):

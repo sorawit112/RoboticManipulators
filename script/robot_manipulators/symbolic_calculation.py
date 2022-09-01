@@ -1,7 +1,7 @@
 """
 Symbolic transformation usage example
 """
-from utils.robo_math import SymbolicTransformation as st
+from robot_manipulators.utils.robo_math import SymbolicTransformation as st
 
 
 def main():

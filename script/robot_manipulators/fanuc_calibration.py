@@ -5,7 +5,7 @@ import scipy.io
 import numpy as np
 import sympy as sp
 
-from utils.model_calibration import ModelCalibrator
+from robot_manipulators.utils.model_calibration import ModelCalibrator
 
 
 def main():

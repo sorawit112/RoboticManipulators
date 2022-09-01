@@ -1,5 +1,5 @@
 import sympy as sp
-from utils.jacobians import JacobianCalculator
+from robot_manipulators.utils.jacobians import JacobianCalculator
 
 
 def main():
